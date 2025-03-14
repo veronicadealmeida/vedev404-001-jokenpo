@@ -55,26 +55,31 @@ h1 {
   padding: 0.8rem;
   position: relative;
 }
-#scoreboard #player h2, #scoreboard #computer h2 {
+
+#player h2, #computer h2 {
   margin: 0;
   padding: 0;
 }
-#scoreboard #player-name, #scoreboard #computer-name {
+
+#player-name, #computer-name {
   font-size: 1.5rem;
   position: absolute;
 }
-#scoreboard #player-points, #scoreboard #computer-points {
+
+#player-points, #computer-points {
   font-size: 3rem;
   position: absolute;
 }
-#scoreboard #player {
+
+#player {
   grid-area: player;
   background-color: #a29bfe;
 }
-#scoreboard #player #player-points {
+#player #player-points {
   right: 1.5rem;
 }
-#scoreboard #versus {
+
+#versus {
   grid-area: versus;
   color: black;
   display: -webkit-flex;
@@ -82,12 +87,12 @@ h1 {
   -webkit-justify-content: center;
   margin-inline: 1rem;
 }
-#scoreboard #computer {
+
+#computer {
   grid-area: computer;
   background-color: #fab1a0;
-  align: right;
 }
-#scoreboard #computer #computer-name {
+#computer #computer-name {
   right: 1.5rem;
 }
 
@@ -108,7 +113,7 @@ h1 {
   margin: 0.5rem 0;
   padding: 0.5rem;
   text-align: center;
-  font-size: 1.3rem;
+  fonte-size: 1.3rem;
 }
 
 .winner {
@@ -123,4 +128,4 @@ h1 {
   background-color: #ffeaa7;
 }
 
-/*# sourceMappingURL=input.css.map */
+/*# sourceMappingURL=styles.css.map */
