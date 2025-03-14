@@ -2,8 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jokenpô</title>
+    <link rel="stylesheet" href="./src/styles/input.css" />
   </head>
   <body>
     <div id="main">
@@ -11,53 +13,53 @@
       <div id="scoreboard">
         <div id="player">
           <h2 id="player-name">Nome</h2>
-          <span id="player-ponints">0</span>
+          <span id="player-points">0</span>
           <ul id="player-choice">
             <li>
-              <a id="player-choice-1">
-                <img src="./src/img/rock.png" alt="pedra" />
-              </a>
+              <a id="player-choice-1"
+                ><img src="./src/img/rock.png" alt="pedra"
+              /></a>
             </li>
             <li>
-              <a id="player-choice-2">
-                <img src="./src/img/paper.png" alt="papel" />
-              </a>
+              <a id="player-choice-2"
+                ><img src="./src/img/paper.png" alt="papel"
+              /></a>
             </li>
             <li>
-              <a id="player-choice-3">
-                <img src="./src/img/scissors.png" alt="tesoura" />
-              </a>
+              <a id="player-choice-3"
+                ><img src="./src/img/scissors.png" alt="tesoura"
+              /></a>
             </li>
           </ul>
         </div>
 
-        <div id="versus">VS</div>
+        <div id="versus"><h2>VS</h2></div>
 
         <div id="computer">
-          <h2 id="computer-name">Máquina</h2>
-          <span id="computer-ponints">0</span>
+          <h2 id="computer-name"></h2>
+          <span id="computer-points">0</span>
           <ul id="computer-choice">
             <li>
-              <a id="computer-choice-1">
-                <img src="./src/img/rock.png" alt="pedra" />
-              </a>
+              <a id="computer-choice-1"
+                ><img src="./src/img/rock.png" alt="pedra"
+              /></a>
             </li>
             <li>
-              <a id="computer-choice-2">
-                <img src="./src/img/paper.png" alt="papel" />
-              </a>
+              <a id="computer-choice-2"
+                ><img src="./src/img/paper.png" alt="papel"
+              /></a>
             </li>
             <li>
-              <a id="computer-choice-3">
-                <img src="./src/img/scissors.png" alt="tesoura" />
-              </a>
+              <a id="computer-choice-3"
+                ><img src="./src/img/scissors.png" alt="tesoura"
+              /></a>
             </li>
           </ul>
         </div>
-
-        <div id="message"></div>
-        <div id="winner"></div>
       </div>
+
+      <div id="message"></div>
+      <div id="winner" class=""></div>
     </div>
   </body>
 </html>
