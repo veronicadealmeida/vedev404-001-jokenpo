@@ -45,15 +45,15 @@ function clearMessage() {
 }
 
 //---------------------------------------------------------------------------
-function clearOptions() {}
-document.getElementById('player-choice-1').className = 'inactive';
-document.getElementById('player-choice-2').className = 'inactive';
-document.getElementById('player-choice-3').className = 'inactive';
+function clearOptions() {
+  document.getElementById('player-choice-1').className = 'inactive';
+  document.getElementById('player-choice-2').className = 'inactive';
+  document.getElementById('player-choice-3').className = 'inactive';
 
-document.getElementById('computer-choice-1').className = 'inactive';
-document.getElementById('computer-choice-2').className = 'inactive';
-document.getElementById('computer-choice-3').className = 'inactive';
-
+  document.getElementById('computer-choice-1').className = 'inactive';
+  document.getElementById('computer-choice-2').className = 'inactive';
+  document.getElementById('computer-choice-3').className = 'inactive';
+}
 //---------------------------------------------------------------------------
 function addOptionMessage() {
   document.getElementById('message').innerHTML = 'Escolha uma opção ...';
@@ -75,7 +75,7 @@ function showResult(winner) {
     winnerLoserMessage.innerText = 'Empate';
   }
 
-  optionMessage.id = '...';
+  optionMessage.innerHTML = '...';
 }
 
 //---------------------------------------------------------------------------
