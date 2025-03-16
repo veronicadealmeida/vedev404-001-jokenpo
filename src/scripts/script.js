@@ -2,8 +2,10 @@ var playerName;
 var computerOption = 0;
 var playerOption = 0;
 var winner;
-var playerPoints = 0;
+var playerPoitns = 0;
 var computerPoints = 0;
+
+showPlayerName();
 
 document.getElementById('player-choice-1').onclick = () => {
   jogar(1);
@@ -17,13 +19,12 @@ document.getElementById('player-choice-3').onclick = () => {
   jogar(3);
 };
 
-showPlayerName();
-
 //---------------------------------------------------------------------------
 function jogar(option) {
   computerOption = getMachineOption(1, 3);
 
   playerOption = option;
+
   enableOption(1, playerOption);
   enableOption(2, computerOption);
 
@@ -32,8 +33,8 @@ function jogar(option) {
   showResult(winner);
 
   setTimeout(() => {
-    clearMessage(), clearOptions(), addOptionMessage();
-  }, 1500);
+    clearMessage(), clearOptions(), addOptionsMessage();
+  }, 2000);
 }
 
 //---------------------------------------------------------------------------
@@ -49,14 +50,25 @@ function clearOptions() {
   document.getElementById('player-choice-1').className = 'inactive';
   document.getElementById('player-choice-2').className = 'inactive';
   document.getElementById('player-choice-3').className = 'inactive';
-
   document.getElementById('computer-choice-1').className = 'inactive';
   document.getElementById('computer-choice-2').className = 'inactive';
   document.getElementById('computer-choice-3').className = 'inactive';
 }
+
 //---------------------------------------------------------------------------
-function addOptionMessage() {
+function addOptionsMessage() {
   document.getElementById('message').innerHTML = 'Escolha uma opção ...';
+}
+
+//---------------------------------------------------------------------------
+function addPoints(winner) {
+  if (winner === 1) {
+    playerPoitns++;
+    document.getElementById('player-points').innerText = playerPoitns;
+  } else if (winner === 2) {
+    computerPoints++;
+    document.getElementById('computer-points').innerText = computerPoints;
+  }
 }
 
 //---------------------------------------------------------------------------
@@ -77,23 +89,12 @@ function showResult(winner) {
 
   optionMessage.innerHTML = '...';
 }
-
-//---------------------------------------------------------------------------
-function addPoints(winner) {
-  if (winner === 1) {
-    playerPoints++;
-    document.getElementById('player-points').innerText = playerPoints;
-  } else if (winner === 2) {
-    computerPoints++;
-    document.getElementById('computer-points').innerText = computerPoints;
-  }
-}
-
 //---------------------------------------------------------------------------
 function checkWinner(playerOption, computerOption) {
-  // 0 - Empate
-  // 1 - Jogador
-  // 2 - Computador
+  // 0 - empate
+  // 1 - jogador
+  // 2 - pc
+
   if (
     (playerOption === 1 && computerOption === 3) ||
     (playerOption === 2 && computerOption === 1) ||
@@ -108,6 +109,7 @@ function checkWinner(playerOption, computerOption) {
 
   return 2;
 }
+
 //---------------------------------------------------------------------------
 function enableOption(type, option) {
   let idName = type === 1 ? 'player-choice-' : 'computer-choice-';
@@ -118,21 +120,20 @@ function enableOption(type, option) {
 
   document.getElementById(idName + option).className = 'active';
 }
-
 //---------------------------------------------------------------------------
 function getMachineOption(min, max) {
   let choice = Math.floor(Math.random() * (max - min + 1)) + min;
-
   return choice;
 }
 //---------------------------------------------------------------------------
 function showPlayerName() {
   playerName = prompt('Informe seu nome:');
-
-  playerName = playerName[0].toUpperCase() + playerName.substring(1);
+  playerName =
+    playerName[0].toUpperCase() + playerName.substring(1).toLowerCase();
 
   document.getElementById('player-name').innerHTML = playerName;
+
   document.getElementById(
     'message'
-  ).innerHTML = `Olá, ${playerName}. Está preparado (a)? Escolha uma opção...`;
+  ).innerHTML = `Olá, ${playerName}. Está preaparado (a)? Escolha uma opção...`;
 }
